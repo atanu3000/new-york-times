@@ -59,22 +59,22 @@ hr {
     margin: 10px auto;
 }
 
-span {
+.search-box span {
     display: flex;
     justify-content: center;
     align-items: center;
     background: #000;
-    border-radius: 10px 0 0 10px;
+    border-radius: 0 10px 10px 0;
     color: #fff;
     height: 100%;
-    width: 50px;
+    width: 70px;
     font-size: 24px;  
 }
 
 input {
     border: 2px solid #ccc;
-    border-radius: 0 10px 10px 0;
-    border-left: none;
+    border-radius: 10px 0 0 10px;
+    border-right: none;
     height: 100%;
     width: calc(100% - 50px);
     outline: none;
@@ -121,11 +121,36 @@ input {
 
 .news {
     width: 350px;
-    height: 250px;
+    min-height: 200px;
+    height: max-content;
     margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+    overflow: hidden;
+}
+
+.news img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.news h2 {
+    padding: 10px;
+}
+
+.news button {
+    padding: 7px 15px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    display: none;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.news button:hover{
+    display: block;
 }
 
 @media only screen and (max-width: 600px) {
@@ -133,8 +158,11 @@ input {
         padding: 10px;
     }
     .search-box {
-        width: 80%;
+        width: 90%;
         height: 35px;
+    }
+    .search-box span {
+        width: 50px;
     }
     .search-box  input {
         font-size: 16px;
@@ -160,7 +188,7 @@ input {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 300px) {
     .news {
         width: 250px;
     }
