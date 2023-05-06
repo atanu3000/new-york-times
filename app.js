@@ -1,5 +1,7 @@
-const news = document.querySelector('.news');
-const btn = document.querySelector('#btn');
+const news = document.querySelectorAll('.news');
+const btn = document.querySelectorAll('#btn');
 
-news.addEventListener('mouseover', () => btn.style.display = 'block');
-news.addEventListener('mouseout', () => btn.style.display = 'none');
+news.forEach((e, b) => {
+    e.addEventListener('mouseover', () => (btn[b].style.display = 'block'));
+    e.addEventListener('mouseout', () => (btn[b].style.display = 'none'));
+});

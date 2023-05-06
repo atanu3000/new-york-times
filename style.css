@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 body {
@@ -11,7 +11,9 @@ body {
     /* height: 100vh; */
     justify-content: center;
     align-items: center;
-    background: #eee;
+    /* background: linear-gradient(90deg, #90ee904d, #87cfeb4d, #892be24d); */
+    background-color: #eee;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .wrapper {
@@ -25,12 +27,21 @@ body {
     align-items: center;
 }
 
+@font-face {
+    font-family: old english;
+    src: url(chomsky/Chomsky.otf);
+}
+
 h1 {
     text-transform: capitalize;
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 48px;
+    font-family: old english;
+    font-weight: lighter;
+    /* box-shadow: 0 50px 50px rgba(0, 0, 0, 0.15); */
+    text-shadow: 5px 7px 10px rgba(0, 0, 0, .3);
 }
 
 h3 {
@@ -57,18 +68,19 @@ hr {
     height: 45px;
     overflow: hidden;
     margin: 10px auto;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.15);
 }
 
 .search-box span {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000;
+    background: #3e3e3e;
     border-radius: 0 10px 10px 0;
     color: #fff;
     height: 100%;
     width: 70px;
-    font-size: 24px;  
+    font-size: 24px;
 }
 
 input {
@@ -96,16 +108,13 @@ input {
     margin-top: 30px;
 }
 
-.news-wrapper h3 {
-    
-}
-
 .news-wrapper .topic button {
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #3e3e3e;
+    color: #fff;
     font-size: 16px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.15);
     border: 1px solid #ccc;
     text-transform: capitalize;
     cursor: pointer;
@@ -114,76 +123,111 @@ input {
 .row {
     display: grid;
     grid-template-columns: repeat(auto-fill, 370px);
-    
-    justify-content: space-evenly;
 
+    justify-content: space-evenly;
 }
 
 .news {
     width: 350px;
-    min-height: 200px;
-    height: max-content;
+    /* min-height: 200px; */
+    height: 260px;
     margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.15);
     background-color: #fff;
     overflow: hidden;
+    transition: 0.3s ease-in-out;
 }
 
 .news img {
+    display: flex;
+    /* margin-top: -20px; */
     width: 100%;
-    cursor: pointer;
+    margin: 0 auto;
+    /* cursor: pointer; */
+    transition: 0.3s ease-in-out;
 }
 
 .news h2 {
-    padding: 10px;
+    padding: 10px 15px;
 }
 
 .news button {
+    position: relative;
+    bottom: 5px;
     padding: 7px 15px;
-    margin: 10px;
-    border-radius: 10px;
+    margin: 7px 17px;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    display: none;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
     cursor: pointer;
     text-transform: capitalize;
+    transition: 0.3s ease-in-out;
 }
 
-.news button:hover{
+.news:hover {
+    /* height: max-content; */
+    overflow: visible;
+}
+
+.news:hover img {
+    position: relative;
+    top: -10px;
+    width: 85%;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.news:hover button {
     display: block;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.2s;
 }
 
 @media only screen and (max-width: 600px) {
     body {
         padding: 10px;
     }
+
     .search-box {
         width: 90%;
         height: 35px;
     }
+
     .search-box span {
         width: 50px;
     }
-    .search-box  input {
+
+    .search-box input {
         font-size: 16px;
     }
+
     h1 {
-        font-size: 28px;
+        font-size: 36px;
+        font-weight: lighter;
     }
+
     h3 {
         font-size: 16px;
         text-align: center;
     }
+
     .news-wrapper .topic button {
         padding: 7px 10px;
         font-size: 14px;
     }
+
     .row {
         display: grid;
         grid-template-columns: repeat(auto-fill, 320px);
     }
+
     .news {
         width: 300px;
+        height: 240px;
         margin: 20px auto;
     }
 }
@@ -192,6 +236,7 @@ input {
     .news {
         width: 250px;
     }
+
     h1 {
         font-size: 24px;
     }
