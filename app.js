@@ -1,7 +1,7 @@
 const apiKey = 'O0RhBQBVGLfvp60MJIn8o5KaoucVaZOi';
 const rows = document.querySelectorAll('.row');
 const viewBtns = document.querySelectorAll('.viewBtn');
-const search = document.querySelector('#searchNews');
+const select = document.querySelector('#selectKey');
 const searchBtn = document.querySelector('#searchBtn');
 
 rowItems = {
@@ -14,7 +14,6 @@ rowItems.rowName.forEach((element, i) => {
 
 function defaultNews(topics, rowNum) {
     const url = `https://api.nytimes.com/svc/topstories/v2/${topics}.json?api-key=${apiKey}`;
-
     fetch(url)
         .then(response => {
             return response.json();
@@ -43,7 +42,8 @@ viewBtns.forEach((element, i) => {
 });
 
 searchBtn.addEventListener('click', () => {
-    let searchKey = search.value.trim();
+    let searchKey = select.value.trim();
+    console.log(searchKey);
     if (searchKey === ''){
         alert('Search for nothing');
     }
@@ -65,13 +65,12 @@ function getNews(searchKey) {
                 let news = `
                     <div class="news">
                     <div class="img">
-                        <img src="${data.results[i].multimedia[0].url}"/>
+                        <img src="${data.results[i].multimedia[0].url}"/> <!--// todo: caught (in promise) TypeError: Cannot read properties of null (reading '0') -->
                     </div>
                     <h3>${data.results[i].title}</h3>
                     <a href="${data.results[i].url}" target="_blank" ><button id="btn">read more</button></a>
                     </div>`;                
                 allNews += news;
-                console.log(data.results[i].multimedia[0].url); // todo: caught (in promise) TypeError: Cannot read properties of null (reading '0')
             }
             $('.news-wrapper').append(`<div class="row"> ${allNews} </div>`);
         })

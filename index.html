@@ -10,12 +10,49 @@
     </head>
     <body>
         <div class="wrapper">
-            <h1> the new york times <ion-icon name="newspaper-outline"></ion-icon></h1>
-            <h3>Get current news from The New York Times on relevant topics!</h3>
-            <h3> Mady with ❤️ by <a href="https://github.com/atanu3000/" target="_blank">Atanu3000</a></h3>
+            <h1>
+                the new york times
+                <ion-icon name="newspaper-outline"></ion-icon>
+            </h1>
+            <h3>
+                Get current news from The New York Times on relevant topics!
+            </h3>
+            <h3>
+                Mady with ❤️ by
+                <a href="https://github.com/atanu3000/" target="_blank"
+                    >Atanu3000</a
+                >
+            </h3>
             <hr />
             <div class="search-box">
-                <input type="search" name="" id="searchNews" placeholder="Search here"/>
+                <select name="" id="selectKey">
+                    <option value="">Choose your news</option>
+                    <option value="arts">arts</option>
+                    <option value="automobiles">automobiles</option>
+                    <option value="books   ">books</option>
+                    <option value="business">business</option>
+                    <option value="fashion ">fashion</option>
+                    <option value="food    ">food</option>
+                    <option value="health  ">health</option>
+                    <option value="home    ">home</option>
+                    <option value="insider ">insider</option>
+                    <option value="magazine">magazine</option>
+                    <option value="movies  ">movies</option>
+                    <option value="nyregion">nyregion</option>
+                    <option value="obituaries">obituaries</option>
+                    <option value="opinion   ">opinion</option>
+                    <option value="politics  ">politics</option>
+                    <option value="realestate">realestate</option>
+                    <option value="science   ">science</option>
+                    <option value="sports    ">sports</option>
+                    <option value="sundayreview">sundayreview</option>
+                    <option value="technology">technology</option>
+                    <option value="theater   ">theater</option>
+                    <option value="t-magazine">t-magazine</option>
+                    <option value="travel    ">travel</option>
+                    <option value="upshot    ">upshot</option>
+                    <option value="world     ">world</option>
+                </select>
                 <span id="searchBtn"><ion-icon name="search"></ion-icon></span>
             </div>
             <div class="news-wrapper">
@@ -64,8 +101,9 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
             integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
             crossorigin="anonymous"
-            referrerpolicy="no-referrer">
-        </script>
+            referrerpolicy="no-referrer"
+        ></script>
         <script src="app.js"></script>
     </body>
 </html>
+
