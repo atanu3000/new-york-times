@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ysabeau:wght@200&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -10,8 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     /* background: linear-gradient(90deg, #90ee904d, #87cfeb4d, #892be24d); */
-    background-color: #fff;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #fff;    
 }
 
 .wrapper {
@@ -22,6 +22,7 @@ body {
     gap: 20px;
     flex-direction: column;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 @font-face {
@@ -92,8 +93,6 @@ hr {
     cursor: pointer;
 }
 
-
-
 .news-wrapper {
     display: flex;
     flex-direction: column;
@@ -107,7 +106,6 @@ hr {
     justify-content: space-between;
     margin-top: 30px;
     background: #fff;
-    /* padding-left: 10px; */
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 50px 50px rgba(0, 0, 0, 0.15);
@@ -129,7 +127,7 @@ hr {
 .row {
     display: grid;
     grid-template-columns: repeat(auto-fill, 370px);
-
+    font-family: 'Ysabeau', sans-serif;
     justify-content: space-evenly;
 }
 
@@ -163,7 +161,9 @@ hr {
     padding: 7px 15px;
     margin: 7px 17px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: none;
+    background: #3180ff;
+    color: #fff;
     visibility: hidden;
     opacity: 0;
     cursor: pointer;
@@ -207,7 +207,6 @@ hr {
 
     .search-box select, option {
         font-size: 16px;
-        /* height: 100px; */
     }
 
     h1 {
